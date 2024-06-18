@@ -1,3 +1,8 @@
+let separador = " ";
+let antesD = "Array antes de ordenar:";
+let despuesD = "Array despues del ordenamiento:";
+
+
 
 /**Creacion de la funcion para generar los numeros al azar del 0 al 10,000
  * de manera aleatoria*/
@@ -13,9 +18,9 @@ function generarNumerosAleatorios(cantidad, maximo) {
 
 
 //-----------------------------------------------------------------------------
-// Descomentar codigo para Implementar Bubble Sort
+// ****** Bubble Sort ******
 
-/*function bubbleSort(array) {
+function bubbleSort(array) {
     let n = array.length;
     let intercambiado;
     do {
@@ -35,19 +40,28 @@ function generarNumerosAleatorios(cantidad, maximo) {
 }
 
 // Crear array de numeros aleatorios antes de ordenar
-const numerosAleatorios = generarNumerosAleatorios(10000, 100000);
-console.log("Array antes de ordenar:", numerosAleatorios);
+console.log(separador);
+console.log("********** BUBBLE SORT **********");
+
+console.time("Tiempo de generacion e impresion del array");  //inicia el timer para medir el tiempo de ejecucion
+const numerosAleatorios1 = generarNumerosAleatorios(10000, 100000);
+console.log(antesD, numerosAleatorios1);
+console.timeEnd("Tiempo de generacion e impresion del array");  // finaliza el tiempo de ejecucion para medir el total
+
+
 
 // Ordenar el array
-const numerosOrdenados = bubbleSort(numerosAleatorios);
-console.log(numerosOrdenados);*/
+console.time("Tiempo de ordenamiento e impresion de array ordenado con Bubble Sort");
+const numerosOrdenados1 = bubbleSort(numerosAleatorios1);
+console.log(despuesD, numerosOrdenados1);
+console.timeEnd("Tiempo de ordenamiento e impresion de array ordenado con Bubble Sort");
 
 
 
 //-----------------------------------------------------------------------------
-// Descomentar para implementar Selection Sort
+// ****** Selection Sort ******
 
-/*function selectionSort(arr) {
+function selectionSort(arr) {
     const n = arr.length;
     for (let i = 0; i < n - 1; i++) {
         let minIndex = i;
@@ -64,21 +78,30 @@ console.log(numerosOrdenados);*/
     return arr;
 }
 
+
+console.log(separador);
+console.log("********** SELECTION SORT **********");
+
+
 // Crear array de numeros aleatorios antes de ordenar
-const numerosAleatorios = generarNumerosAleatorios(10000, 100000);
-console.log("Array antes de ordenar:", numerosAleatorios);
+console.time("Tiempo de generacion e impresion del array");  //inicia el timer para medir el tiempo de ejecucion
+const numerosAleatorios2 = generarNumerosAleatorios(10000, 100000);
+console.log(antesD, numerosAleatorios2);
+console.timeEnd("Tiempo de generacion e impresion del array");  // finaliza el tiempo de ejecucion para medir el total
 
 
 // Ordenar el array usando Selection Sort
-const numerosOrdenados = selectionSort(numerosAleatorios);
-console.log("Array después de ordenar:", numerosOrdenados);*/
+console.time("Tiempo de ordenamiento e impresion de array ordenado con Selection Sort");
+const numerosOrdenados2 = selectionSort(numerosAleatorios2);
+console.log(despuesD, numerosOrdenados2);
+console.timeEnd("Tiempo de ordenamiento e impresion de array ordenado con Selection Sort");
 
 
 
 //-----------------------------------------------------------------------------
-// Descomentar para implementar Insertion Sort
+// ****** Insertion Sort ******
 
-/*function insertionSort(array) {
+function insertionSort(array) {
     for (let i = 1; i < array.length; i++) {
         let current = array[i];
         let j = i - 1;
@@ -91,18 +114,27 @@ console.log("Array después de ordenar:", numerosOrdenados);*/
     return array;
 }
 
-const numerosAleatorios = generarNumerosAleatorios(10000, 10000);
-console.log("Antes de ordenar:", numerosAleatorios); 
+console.log(separador);
+console.log("********** INSERTION SORT **********");
 
-const numerosOrdenados = insertionSort(numerosAleatorios);
-console.log("Después de ordenar:", numerosOrdenados); */
+
+console.time("Tiempo de generacion e impresion del array");  //inicia el timer para medir el tiempo de ejecucion
+const numerosAleatorios3 = generarNumerosAleatorios(10000, 10000);
+console.log("Antes de ordenar:", numerosAleatorios3); 
+console.timeEnd("Tiempo de generacion e impresion del array");  // finaliza el tiempo de ejecucion para medir el total
+
+
+console.time("Tiempo de ordenamiento e impresion de array ordenado con Insertion Sort");
+const numerosOrdenados3 = insertionSort(numerosAleatorios3);
+console.log("Después de ordenar:", numerosOrdenados3); 
+console.timeEnd("Tiempo de ordenamiento e impresion de array ordenado con Insertion Sort");
 
 
 
 //-----------------------------------------------------------------------------
-// Descomentar para implementar Merge Sort
+// ****** Merge Sort ******
 
-/*function mergeSort(arr) {
+function mergeSort(arr) {
     if (arr.length <= 1) {
         return arr;
     }
@@ -132,19 +164,26 @@ function merge(izquierda, derecha) {
     return resultado.concat(izquierda.slice(i)).concat(derecha.slice(j));
 }
 
-const numerosAleatorios = generarNumerosAleatorios(10000, 10000);
-console.log("Array sin ordenar:", numerosAleatorios);
 
-const numerosOrdenados = mergeSort(numerosAleatorios);
-console.log("Array ordenado:", numerosOrdenados);*/
+console.log(separador);
+console.log("********** MERGE SORT **********");
 
+console.time("Tiempo de generacion e impresion del array");  //inicia el timer para medir el tiempo de ejecucion
+const numerosAleatorios4 = generarNumerosAleatorios(10000, 10000);
+console.log("Array sin ordenar:", numerosAleatorios4);
+console.timeEnd("Tiempo de generacion e impresion del array");  // finaliza el tiempo de ejecucion para medir el total
+
+console.time("Tiempo de ordenamiento e impresion de array ordenado con Merge Sort");
+const numerosOrdenados4 = mergeSort(numerosAleatorios4);
+console.log("Array ordenado:", numerosOrdenados4);
+console.timeEnd("Tiempo de ordenamiento e impresion de array ordenado con Merge Sort");
 
 
 //-----------------------------------------------------------------------------
-// Descomentar para implementar Quick Sort
+// ****** Quick Sort ******
 
 // Función de Quick Sort
-/*function quickSort(arr) {
+function quickSort(arr) {
     if (arr.length <= 1) {
         return arr;
     }
@@ -167,11 +206,26 @@ console.log("Array ordenado:", numerosOrdenados);*/
     return [...quickSort(left), ...equal, ...quickSort(right)];
 }
 
+console.log(separador);
+console.log("********** QUICK SORT **********");
+
 // Generar el array de números aleatorios
-const numerosAleatorios = generarNumerosAleatorios(10000, 10000);
-console.log("Números aleatorios generados:", numerosAleatorios);
+console.time("Tiempo de generacion e impresion del array");  //inicia el timer para medir el tiempo de ejecucion
+const numerosAleatorios5 = generarNumerosAleatorios(10000, 10000);
+console.log(antesD, numerosAleatorios5);
+console.timeEnd("Tiempo de generacion e impresion del array");  // finaliza el tiempo de ejecucion para medir el total
 
 // Ordenar el array usando Quick Sort
-const numerosOrdenados = quickSort(numerosAleatorios);
-console.log("Números ordenados:", numerosOrdenados);*/
+console.time("Tiempo de ordenamiento e impresion de array ordenado con Quick Sort");
+const numerosOrdenados5 = quickSort(numerosAleatorios5);
+console.log(despuesD, numerosOrdenados5);
+console.timeEnd("Tiempo de ordenamiento e impresion de array ordenado con Quick Sort");
 
+
+
+
+//Veredicto final
+console.log(separador);
+console.log("-----------------------------------------------------------------------------");
+console.log(separador);
+console.log("EL METODO DE ORDENAMIENTO MAS RAPIDO ES *** MERGE SORT ***");
